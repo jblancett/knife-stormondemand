@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
 	s.email = ["JoshBlancet@gmail.com"]
 	s.summary = "StormOnDemand support for Chef's Knife Command"
 	s.description = s.summary
+	s.homepage = "http://github.com/jblancett/knife-stormondemand"
 	s.files = `git ls-files`.split("\n")
 	s.add_dependency "fog", "~> 1.0"
 	s.require_paths = ["lib"]
