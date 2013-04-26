@@ -1,3 +1,4 @@
+$:.push File.expand_path("../lib", __FILE__)
 require "knife-stormondemand/version"
 
 Gem::Specification.new do |s|
