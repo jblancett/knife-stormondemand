@@ -34,11 +34,11 @@ class Chef
 
 			def connection
 				@connection ||= begin
-					connection = Fog::Compute.new(
+					connection = Fog::Compute.new({
 						:provider => 'stormondemand',
-						:storm_on_demand_username => Chef::Config[:knife][:storm_on_demand_username],
-						:storm_on_demand_password => Chef::Config[:knife][:storm_on_demand_username]
-					)
+						:storm_on_demand_username => locate_config_value(:storm_on_demand_username),
+						:storm_on_demand_password => locate_config_value(:storm_on_demand_password)
+					})
 				end
 			end
 
