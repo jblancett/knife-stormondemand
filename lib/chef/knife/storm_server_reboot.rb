@@ -10,6 +10,12 @@ class Chef
 
 			banner "knife storm server reboot STORM_ID|STORM_FQDN (options)"
 
+			option :force,
+				:long => "--force",
+				:description => "Force Reboot",
+				:boolean => true,
+				:default => false
+
 			def run
 
 				validate!
@@ -30,7 +36,7 @@ class Chef
 						puts "\n"
 						confirm("Do you really want to reboot this server")
 
-						server.reboot
+						server.reboot :force => config[:force] ? 1 : 0
 						ui.warn("Rebooted server #{storm_id}")
 					rescue Fog::Compute::StormOnDemand::NotFound
 						ui.error("Could note locate server #{storm_id}")
