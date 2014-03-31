@@ -2,6 +2,8 @@
 # Author: Josh Blancett
 #
 
+require 'chef/knife/storm_base'
+
 class Chef
 	class Knife
 		class StormServerReboot < Knife
